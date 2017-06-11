@@ -1,6 +1,8 @@
 fn main() {
     println!("{} days", 31);
 
+    println!("{0} can specify where {1} show up, but will {1} show up where {0} want it to?", "you", "this");
+
     println!("{subject} {verb} {object}",
         object="the lazy dog",
         subject="the quick brown fox",
@@ -14,11 +16,12 @@ fn main() {
 
     println!("My name is {0}, {1} {0}", "Bond", "James");
 
-    format!("Pi is roughly {}", "3.1415");
-    // {
-    //     #[allow(dead_code)]
-    //     #derive(Debug)
-    //     struct Structure(i32);
-    //     println!("This struct {:?} won't print", Structure(3));
-    // }
+    let pi = 3.141592;
+    let formatted_pi = format!("{:.*}", 3, pi);
+    println!("Pi written out in full is {unformatted}. But to make it easy, let's say that it is is roughly {formatted}", unformatted=pi, formatted=formatted_pi);
+    
+    // #[allow(dead_code)]
+    // struct Structure(i32);
+
+    // println!("This struct {:?} won't print", Structure(3));
 }
