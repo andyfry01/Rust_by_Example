@@ -19,9 +19,10 @@ fn main() {
     let pi = 3.141592;
     let formatted_pi = format!("{:.*}", 3, pi);
     println!("Pi written out in full is {unformatted}. But to make it easy, let's say that it is is roughly {formatted}", unformatted=pi, formatted=formatted_pi);
-    
-    // #[allow(dead_code)]
-    // struct Structure(i32);
 
-    // println!("This struct {:?} won't print", Structure(3));
+    #[allow(dead_code)]
+    #[derive(Debug)]
+    struct Structure(i32);
+
+    println!("This struct {struct:?} won't print without #[derive(Debug)]", struct=Structure(3));
 }
